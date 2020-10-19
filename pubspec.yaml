@@ -16,6 +16,10 @@ dependencies:
   dio: ^3.0.10
   # Data connection checker
   data_connection_checker: ^0.3.4
+  # Bloc for state management
+  flutter_bloc: ^6.0.5
+  # Value Equality
+  equatable: ^1.2.5
 
 dev_dependencies:
   flutter_test:
