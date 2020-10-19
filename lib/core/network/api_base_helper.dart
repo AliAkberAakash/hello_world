@@ -14,7 +14,7 @@ class ApiBaseHelper{
 
   ApiBaseHelper({@required this.dioFactory});
 
-  Future<Response> get(String endUrl, dynamic header) async {
+  Future<dynamic> get(String endUrl, dynamic header) async {
     var responseJson;
     try {
       // add headers
@@ -31,10 +31,11 @@ class ApiBaseHelper{
 
 }
 
-Response _returnResponse(Response response) {
+dynamic _returnResponse(Response response) {
   switch (response.statusCode) {
     case 200:
-      return response;
+      var responseJson = json.decode(response.data.toString());
+      return responseJson;
     case 400:
       var responseJson = json.decode(response.data.toString());
       throw BadRequestException(responseJson["message"].toString());

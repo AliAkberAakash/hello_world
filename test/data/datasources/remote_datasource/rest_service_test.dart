@@ -3,6 +3,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hello_world/core/network/api_base_helper.dart';
 import 'package:hello_world/core/network/dio_factory.dart';
+import 'package:hello_world/data/datasources/remote_datasource/remote_datasource.dart';
+import 'package:hello_world/data/datasources/remote_datasource/remote_datasource_impl.dart';
 import 'package:hello_world/data/datasources/remote_datasource/rest_service.dart';
 import 'package:hello_world/data/models/message_response.dart';
 import 'package:mockito/mockito.dart';
@@ -14,11 +16,13 @@ void main() {
   DioFactory dioFactory;
   ApiBaseHelper helper;
   RestService service;
+  RemoteDataSource remoteDataSource;
 
   setUp(() {
     dioFactory = DioFactory();
     helper = ApiBaseHelper(dioFactory : dioFactory);
     service = RestService(helper: helper);
+    remoteDataSource = RemoteDataSourceImpl(service: service);
   });
 
   group('getMessage', () {
@@ -34,9 +38,9 @@ void main() {
         return Response(data: tMessage.toJson(), statusCode: 200);
       });*/
       //act
-      final result = await service.getMessage();
+      final result = await remoteDataSource.getMessage();
 
-      print(result);
+      print(result.toJson());
       //assert
       expect(result, equals(tMessage));
     });
