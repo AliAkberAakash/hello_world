@@ -10,6 +10,10 @@ class NetworkException implements Exception {
 
 }
 
+class NoInternetException extends NetworkException{
+  NoInternetException(String message) : super(message, "No Internet");
+}
+
 class FetchDataException extends NetworkException{
   FetchDataException(String message) : super(message, "Error During Communication: ");
 }
