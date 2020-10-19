@@ -1,13 +1,21 @@
 import 'package:dio/dio.dart';
-import 'package:hello_world/core/network/dio_factory.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:hello_world/core/network/api_base_helper.dart';
+import 'package:hello_world/utils/constants.dart';
 
 class RestService {
-  final DioFactory _dioFactory;
+  final ApiBaseHelper helper;
 
-  RestService(this._dioFactory);
+  RestService({@required this.helper});
 
+  //calls base url
   Future<Response> getMessage() {
-    return _dioFactory.getDio().get("http://api.alquran.cloud/v1/surah");
+
+    final header = {
+      NetworkConstants.ACCEPT : "application/json"
+    };
+
+    return helper.get("", header);
   }
 
 }
