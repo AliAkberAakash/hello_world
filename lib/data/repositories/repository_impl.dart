@@ -16,7 +16,7 @@ class RepositoryImpl extends Repository{
   @override
   Future<MessageResponse> getMessage() async{
     if(await networkInfo.isConnected){
-      remoteDataSource.getMessage();
+      return remoteDataSource.getMessage();
     }else{
       //todo get data from local data source
       throw NoInternetException("");

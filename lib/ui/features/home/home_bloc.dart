@@ -19,12 +19,16 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   Stream<HomeState> mapEventToState(
     HomeEvent event,
   ) async* {
-    try{
-      yield HomeLoadingState();
-      final response = await repository.getMessage();
-      yield HomeLoadedState(response: response);
-    }on Exception {
-      yield HomeFailureState();
+    if(event is GetMessageEvent){
+      try{
+        yield HomeLoadingState();
+        final response = await repository.getMessage();
+        /*print(response.toJson());*/
+        yield HomeLoadedState(response: response);
+      }on Exception {
+        yield HomeFailureState();
+        print("Exception");
+      }
     }
   }
 }
