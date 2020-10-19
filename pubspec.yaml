@@ -14,10 +14,15 @@ dependencies:
 
   # Dio for http connection
   dio: ^3.0.10
+  # Data connection checker
+  data_connection_checker: ^0.3.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  # Mock Tests
+  mockito: ^4.1.0
 
 flutter:
 

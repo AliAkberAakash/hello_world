@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:hello_world/core/failure/exceptions/network_exception.dart';
 import 'package:hello_world/utils/constants.dart';
 
@@ -9,17 +10,17 @@ import 'dio_factory.dart';
 
 class ApiBaseHelper{
 
-  final DioFactory _dioFactory;
+  final DioFactory dioFactory;
 
-  ApiBaseHelper(this._dioFactory);
+  ApiBaseHelper({@required this.dioFactory});
 
-  Future<dynamic> get(String endUrl, dynamic header) async {
+  Future<Response> get(String endUrl, dynamic header) async {
     var responseJson;
     try {
       // add headers
-      _dioFactory.getDio().options.headers = header;
+      dioFactory.getDio().options.headers = header;
       // make the network call
-      final response = await _dioFactory.getDio().get(NetworkConstants.BASE_URL+endUrl);
+      final response = await dioFactory.getDio().get(NetworkConstants.BASE_URL+endUrl);
       //return the response
       responseJson = _returnResponse(response);
     } on SocketException {
@@ -30,11 +31,10 @@ class ApiBaseHelper{
 
 }
 
-dynamic _returnResponse(Response response) {
+Response _returnResponse(Response response) {
   switch (response.statusCode) {
     case 200:
-      var responseJson = json.decode(response.data.toString());
-      return responseJson;
+      return response;
     case 400:
       var responseJson = json.decode(response.data.toString());
       throw BadRequestException(responseJson["message"].toString());
