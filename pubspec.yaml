@@ -22,6 +22,8 @@ dependencies:
   equatable: ^1.2.5
   # Dependency injection
   get_it: ^5.0.1
+  # Shared Preferences
+  shared_preferences: ^0.5.12+2
 
 dev_dependencies:
   flutter_test:
