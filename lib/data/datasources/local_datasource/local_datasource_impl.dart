@@ -10,7 +10,7 @@ class LocalDataSourceImpl implements LocalDataSource {
   Future<MessageResponse> getMessageResponse() async{
 
     String message = await SharedPrefUtil.getString(MyConstants.MESSAGE_KEY);
-    if(message.isEmpty) message = "Hello World!"; //for the first time
+    if(message.isEmpty) message = "Hello world!"; //for the first time
     return MessageResponse(success: true, message: message);
   }
 
