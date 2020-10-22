@@ -9,6 +9,7 @@ import 'package:hello_world/data/datasources/remote_datasource/remote_datasource
 import 'package:hello_world/data/datasources/remote_datasource/rest_service.dart';
 import 'package:hello_world/data/repositories/repository.dart';
 import 'package:hello_world/data/repositories/repository_impl.dart';
+import 'package:hello_world/di/dependency_injection.dart';
 import 'package:hello_world/ui/features/home/home_bloc.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,19 +19,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  DioFactory factory;
-  ApiBaseHelper helper;
-  RestService service;
-  RemoteDataSource remoteDataSource;
-  Repository repository;
-
   @override
   void initState() {
-    factory = DioFactory();
-    helper = ApiBaseHelper(dioFactory: factory);
-    service = RestService(helper: helper);
-    remoteDataSource = RemoteDataSourceImpl(service: service);
-    repository = RepositoryImpl(remoteDataSource: remoteDataSource, networkInfo: NetworkInfoImpl(DataConnectionChecker()));
     super.initState();
   }
 
@@ -38,7 +28,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocProvider(
-        create: (context) => HomeBloc(repository: repository),
+        create: (context) => HomeBloc(repository: locator<Repository>()),
         child: Builder(
           builder: (ctxB){
             ctxB.bloc<HomeBloc>().add(GetMessageEvent());

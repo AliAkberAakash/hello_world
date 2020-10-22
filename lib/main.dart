@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/di/dependency_injection.dart';
 import 'package:hello_world/ui/features/home/home_page.dart';
 
 void main() {
+  setup();
   runApp(MyApp());
 }
 
