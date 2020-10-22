@@ -8,6 +8,10 @@ class NetworkConstants{
   static const CONTENT_TYPE = "content-Type";
 }
 
+class MyConstants{
+  static const MESSAGE_KEY = "message";
+}
+
 class DefaultValue {
   static const bool kDefaultBoolean = false;
   static const int kDefaultInt = 0;
