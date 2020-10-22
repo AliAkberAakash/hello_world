@@ -9,7 +9,8 @@ class LocalDataSourceImpl implements LocalDataSource {
   @override
   Future<MessageResponse> getMessageResponse() async{
 
-    final message = await SharedPrefUtil.getString(MyConstants.MESSAGE_KEY);
+    String message = await SharedPrefUtil.getString(MyConstants.MESSAGE_KEY);
+    if(message.isEmpty) message = "Hello World!"; //for the first time
     return MessageResponse(success: true, message: message);
   }
 
