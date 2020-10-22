@@ -33,6 +33,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Home"
+        ),
+      ),
       body: BlocProvider(
         create: (context) => HomeBloc(repository: locator<Repository>())
         ..add(GetMessageEvent()), //load data at the start
