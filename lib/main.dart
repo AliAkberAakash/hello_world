@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hello_world/di/dependency_injection.dart';
 import 'package:hello_world/ui/features/home/home_page.dart';
+import 'package:hello_world/utils/my_colors.dart';
 
 void main() {
   setup();
@@ -12,10 +13,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Hello World',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        primaryColor: primary,
+        primaryColorDark: primary_dark,
+        accentColor: accent,
+
+        // Define the default font family.
+        fontFamily: 'Georgia',
+
       ),
       home: HomePage(),
     );
