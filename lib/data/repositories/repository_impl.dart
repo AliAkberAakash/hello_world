@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
-import 'package:hello_world/core/failure/exceptions/network_exception.dart';
-import 'package:hello_world/core/network/network_info.dart';
-import 'package:hello_world/data/datasources/local_datasource/local_datasource.dart';
-import 'package:hello_world/data/datasources/remote_datasource/remote_datasource.dart';
-import 'package:hello_world/data/models/message_response.dart';
-import 'package:hello_world/data/repositories/repository.dart';
+import '../../core/network/network_info.dart';
+import '../datasources/local_datasource/local_datasource.dart';
+import '../datasources/remote_datasource/remote_datasource.dart';
+import '../models/message_response.dart';
+import 'repository.dart';
 
 class RepositoryImpl extends Repository{
 

@@ -3,8 +3,8 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:hello_world/core/failure/exceptions/network_exception.dart';
-import 'package:hello_world/utils/constants.dart';
+import '../failure/exceptions/network_exception.dart';
+import '../../utils/constants.dart';
 
 import 'dio_factory.dart';
 

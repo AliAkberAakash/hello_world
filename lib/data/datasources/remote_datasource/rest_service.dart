@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:hello_world/core/network/api_base_helper.dart';
-import 'package:hello_world/utils/constants.dart';
+import '../../../core/network/api_base_helper.dart';
+import '../../../utils/constants.dart';
 
 class RestService {
   final ApiBaseHelper helper;

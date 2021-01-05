@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:hello_world/data/models/message_response.dart';
-import 'package:hello_world/data/repositories/repository.dart';
+import "../../../data/models/message_response.dart";
+import '../../../data/repositories/repository.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';

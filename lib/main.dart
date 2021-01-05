@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world/di/dependency_injection.dart';
-import 'package:hello_world/ui/features/home/home_page.dart';
-import 'package:hello_world/utils/my_colors.dart';
+import 'di/dependency_injection.dart';
+import 'ui/features/home/home_page.dart';
+import 'utils/my_colors.dart';
 
 void main() {
   setup();

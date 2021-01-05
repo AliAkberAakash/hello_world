@@ -1,20 +1,12 @@
-import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hello_world/core/network/api_base_helper.dart';
-import 'package:hello_world/core/network/dio_factory.dart';
-import 'package:hello_world/core/network/network_info.dart';
-import 'package:hello_world/core/pages/empty_page.dart';
-import 'package:hello_world/core/pages/loading_pge.dart';
-import 'package:hello_world/data/datasources/remote_datasource/remote_datasource.dart';
-import 'package:hello_world/data/datasources/remote_datasource/remote_datasource_impl.dart';
-import 'package:hello_world/data/datasources/remote_datasource/rest_service.dart';
-import 'package:hello_world/data/models/message_response.dart';
-import 'package:hello_world/data/repositories/repository.dart';
-import 'package:hello_world/data/repositories/repository_impl.dart';
-import 'package:hello_world/di/dependency_injection.dart';
-import 'package:hello_world/ui/features/home/home_bloc.dart';
-import 'package:hello_world/utils/string_formatter.dart';
+import '../../../core/pages/empty_page.dart';
+import '../../../core/pages/loading_pge.dart';
+import '../../../data/models/message_response.dart';
+import '../../../data/repositories/repository.dart';
+import '../../../di/dependency_injection.dart';
+import 'home_bloc.dart';
+import '../../../utils/string_formatter.dart';
 
 class HomePage extends StatefulWidget {
   @override

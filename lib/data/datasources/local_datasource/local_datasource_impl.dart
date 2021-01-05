@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:hello_world/data/datasources/local_datasource/local_datasource.dart';
-import 'package:hello_world/data/models/message_response.dart';
-import 'package:hello_world/utils/constants.dart';
-import 'package:hello_world/utils/shared_pref_utils.dart';
+import 'local_datasource.dart';
+import '../../models/message_response.dart';
+import '../../../utils/constants.dart';
+import '../../../utils/shared_pref_utils.dart';
 
 class LocalDataSourceImpl implements LocalDataSource {
   @override

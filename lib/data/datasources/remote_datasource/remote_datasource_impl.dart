@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:hello_world/data/datasources/remote_datasource/remote_datasource.dart';
-import 'package:hello_world/data/datasources/remote_datasource/rest_service.dart';
-import 'package:hello_world/data/models/message_response.dart';
+import 'remote_datasource.dart';
+import 'rest_service.dart';
+import '../../models/message_response.dart';
 
 class RemoteDataSourceImpl extends RemoteDataSource{
 
